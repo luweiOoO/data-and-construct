@@ -1,6 +1,8 @@
 package linkedList;
 
 
+import sun.plugin.javascript.navig4.Link;
+
 public class SingleLinkedListDemo {
 
     public static void main(String[] args){
@@ -23,7 +25,17 @@ public class SingleLinkedListDemo {
 
 
         singleLinkedList.list();
+        System.out.println("单链表节点个数：" + LinkListQuestion.getLength(singleLinkedList.getHead()));
 
+        System.out.println("反向遍历节点");
+        LinkListQuestion.reversePrint(singleLinkedList.getHead());
+
+        System.out.println("反转链表");
+        LinkListQuestion.reversetList(singleLinkedList.getHead());
+        singleLinkedList.list();
+
+
+        System.out.println("获得第K个节点" + LinkListQuestion.getKNode(singleLinkedList.getHead(),1));
         singleLinkedList.delete(2);
         singleLinkedList.list();
 
@@ -34,6 +46,10 @@ public class SingleLinkedListDemo {
 class SingleLinkedList{
     //先初始化一个头节点，头节点不要动
     private HeroNode head = new HeroNode(0,"","");
+
+    public HeroNode getHead(){
+        return head;
+    }
 
     //添加节点到单向链表
     public void add(HeroNode node){
