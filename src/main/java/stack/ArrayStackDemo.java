@@ -100,6 +100,11 @@ class ArrayStack{
         return result;
     }
 
+    //查看栈顶元素
+    public int firstNum(){
+        return stack[top];
+    }
+
     //遍历栈,需要从栈顶开始显示数据
     public void list(){
         if(isEmpty()){
